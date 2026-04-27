@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.contenedor {
+  display: grid;
+  height: 100vh;
+
+  /* DESKTOP */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  grid-template-areas:
+    "c1 c2"
+    "c3 c4"
+    "c5 c6";
+}
+
+/* asignación de áreas */
+.caja-1 { grid-area: c1; }
+.caja-2 { grid-area: c2; }
+.caja-3 { grid-area: c3; }
+.caja-4 { grid-area: c4; }
+.caja-5 { grid-area: c5; }
+.caja-6 { grid-area: c6; }
+
+/* estilo general */
+.caja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  border: 0.1rem solid black;
+}
+
+/* colores */
+.caja-1, .caja-2 { background-color: #cfe8cf; }
+.caja-3, .caja-4 { background-color: #f4e4bc; }
+.caja-5 { background-color: #e6bcbc; }
+.caja-6 { background-color: #bfcde0; }
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+  .contenedor {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+
+    grid-template-areas:
+      "c6 c6"
+      "c5 c5"
+      "c3 c4"
+      "c2 c2"
+      "c1 c1";
+  }
+}

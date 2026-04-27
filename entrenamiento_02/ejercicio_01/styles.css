@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.contenedor {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+
+  /* Desktop */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+/* cajas generales */
+.caja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  border: 0.1rem solid black;
+}
+
+/* colores */
+.caja-1 { background: #cfe8cf; }
+.caja-2 { background: #f4e4bc; }
+.caja-3, .caja-4, .caja-5, .caja-6 { background: #e6bcbc; }
+
+/* fila inferior como grid propio */
+.fila-inferior {
+  grid-column: 1 / 3; /* ocupa todo el ancho */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+  .contenedor {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+  }
+
+  .fila-inferior {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /* cambio de colores como en la imagen */
+  .caja-5, .caja-6 {
+    background: #bfcde0;
+  }
+}
