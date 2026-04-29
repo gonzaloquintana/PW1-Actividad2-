@@ -1,0 +1,46 @@
+main {
+    /* background-color: beige; */
+    width: 80vw;
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.2em;
+    padding: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contenedorInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.datosPersonales {
+    width: 60%;
+    list-style: none;
+}
+
+.foto {
+    width: 40%;
+}
+
+.estudios {
+    list-style: none;
+}
+
+.imgEstudios {
+    /* display: flex;
+    flex-direction: row;
+    height: 15em;*/
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 1fr 4fr; Vienen 1fr por defecto*/
+    grid-gap: 1em;
+}
+
+.imgEstudios img {
+    width: 100%;
+}
