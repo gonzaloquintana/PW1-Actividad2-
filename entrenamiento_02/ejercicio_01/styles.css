@@ -4,59 +4,61 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-}
-
+/* CONTENEDOR PRINCIPAL */
 .contenedor {
   display: grid;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 
-  /* Desktop */
+  /* MOBILE FIRST */
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+
+  grid-template-areas:
+    "uno uno"
+    "dos dos"
+    "tres cuatro"
+    "cinco seis";
 }
 
-/* cajas generales */
+/* 🔥 CLAVE: elimina el problema del wrapper */
+.fila-inferior {
+  display: contents;
+}
+
+/* ESTILO GENERAL */
 .caja {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  font-weight: bold;
-  border: 0.1rem solid black;
+  border: 1px solid black;
 }
 
-/* colores */
-.caja-1 { background: #cfe8cf; }
-.caja-2 { background: #f4e4bc; }
-.caja-3, .caja-4, .caja-5, .caja-6 { background: #e6bcbc; }
+/* AREAS + COLORES */
+.caja-1 { grid-area: uno; background: #cfe8cf; }
+.caja-2 { grid-area: dos; background: #f4e4bc; }
+.caja-3 { grid-area: tres; background: #e6bcbc; }
+.caja-4 { grid-area: cuatro; background: #e6bcbc; }
+.caja-5 { grid-area: cinco; background: #bfcde0; }
+.caja-6 { grid-area: seis; background: #bfcde0; }
 
-/* fila inferior como grid propio */
-.fila-inferior {
-  grid-column: 1 / 3; /* ocupa todo el ancho */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
 
-/* ===================== */
-/* 📱 MOBILE */
-/* ===================== */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
 
   .contenedor {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2fr 1fr;
+
+    grid-template-areas:
+      "uno uno dos dos"
+      "tres cuatro cinco seis";
   }
 
-  .fila-inferior {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  /* cambio de colores como en la imagen */
-  .caja-5, .caja-6 {
-    background: #bfcde0;
+  .caja-3,
+  .caja-4,
+  .caja-5,
+  .caja-6 {
+    background: #e6bcbc;
   }
 }

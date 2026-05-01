@@ -50,6 +50,8 @@ body {
       "tres cuatro"
       "cinco seis";
   }
+  .caja-2 { grid-area: dos; background: #b7c7b0; }
+  .caja-4 { grid-area: cuatro; background: #e6d0b5; }
 }
 
 /*  MOBILE */
