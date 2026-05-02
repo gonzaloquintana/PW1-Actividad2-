@@ -13,9 +13,10 @@
   grid-template-rows: 1fr 1fr 1fr;
 }
 
-.caja-1, .caja-2{background-color: green;}
+.caja-1, .caja-2 { background-color: #cfe8cf; }
 .caja-3, .caja-4{background-color: lightyellow;}
-.caja-6, .caja-5{background-color: lightblue;}
+.caja-5 {background-color: lightpink;}
+.caja-6 {background-color: lightblue;}
 
 
 .caja{
