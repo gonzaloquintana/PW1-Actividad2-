@@ -21,7 +21,6 @@
     "cinco seis";
 }
 
-/* 🔥 CLAVE: elimina el problema del wrapper */
 .fila-inferior {
   display: contents;
 }
@@ -37,7 +36,7 @@
 
 /* AREAS + COLORES */
 .caja-1 { grid-area: uno; background: #cfe8cf; }
-.caja-2 { grid-area: dos; background: #f4e4bc; }
+.caja-2 { grid-area: dos; background: #f4e4bc; margin-top: 0.5em; }
 .caja-3 { grid-area: tres; background: #e6bcbc; }
 .caja-4 { grid-area: cuatro; background: #e6bcbc; }
 .caja-5 { grid-area: cinco; background: #bfcde0; }
@@ -54,7 +53,7 @@
       "uno uno dos dos"
       "tres cuatro cinco seis";
   }
-
+  .caja-2{margin-top: 0em;}
   .caja-3,
   .caja-4,
   .caja-5,
